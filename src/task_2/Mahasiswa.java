@@ -51,8 +51,8 @@ public class Mahasiswa {
         this.Status = Status;
     }
 
-    public void setNilai(char Nilai) {
-        this.Nilai[i] = Nilai;
+    public void setNilai(char[] Nilai) {
+        this.Nilai = Nilai;
     }
     
     
@@ -77,30 +77,27 @@ public class Mahasiswa {
 
    public void addNilai (char Nilai){
         this.Nilai[i] = Nilai;
-        i=i+1;
+        i=i++;
         }
 
     
    
     public char cekNilai (Mahasiswa m) 
     {
-        int x;
-        char y;
-        for (char x = 'A' ; y <= 'E' ; y++) 
-        {
-            for (int z=0 ; z<i ; z++) 
-            {
-                if (y == Nilai [z])
-                {
-                    for (int p=0; p<=i; p++)
-                    {   
-                    if (y==m.Nilai [p])
-                    return y;
+        int p;
+        for (char q = 'A' ; q < 'E' ; q++) {
+            for (int r=0 ; r<i ; r++) {
+                if (q == Nilai[r]){
+                    for (int s=0; s<=i; s++){   
+                    if (q==m.Nilai [s]){
+                    return q;
    
                     }
                 }
             }
         }
+        return 0;
+    }
         return 0;
     }
 }
